@@ -1,0 +1,33 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+PUT https://auditor-staging.sleek.sg/api/log
+Content-Type: application/json
+Authorization: 941b4403-e58f-49d6-9f5d-22c7c5c34e88
+
+{
+  "entry_type": "comment",
+  "actionBy": {
+    "_id": "5d53cd305226ca04293a48e7",
+    "first_name": "First",
+    "last_name": "Last",
+    "email":"Test@email.com"
+  },
+  "company": {
+    "_id": "5d53cd305226ca04293a48e8",
+    "name": "Test Company PTE. LTD",
+    "uen": "201293020"
+  },
+  "text": "Test Text "
+}
+
+###
+GET http://localhost:9000/api/log?company_id=5d53cd305226ca04293a48e8&entry_type=comment&skip=0&limit=10
+Accept: application/json
+Authorization: 941b4403-e58f-49d6-9f5d-22c7c5c34e88
+
+###

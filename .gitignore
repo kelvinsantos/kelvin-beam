@@ -1,0 +1,4 @@
+server/app/dist
+ui/dist
+server/mongo-data
+server/mongo-backup

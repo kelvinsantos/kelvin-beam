@@ -1,0 +1,22 @@
+version: '3'
+volumes:
+  caddy: {}
+
+services:
+  beam: &beam
+    build:
+      context: .
+    depends_on:
+      - mongo
+    env_file:
+      - ./.env
+    ports:
+      - "9090:9090"
+
+  mongo:
+    image: mongo:4.1.13-bionic
+    volumes:
+      - ./mongo-data/:/data/db/
+      - ./mongo-backup/:/mongo-backup/
+    ports:
+      - "27017:27017"
